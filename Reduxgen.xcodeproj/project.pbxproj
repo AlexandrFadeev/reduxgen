@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAD90A212416D02F0068B124 /* action.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAD90A202416D02F0068B124 /* action.txt */; };
+		FAD90A232416D2F00068B124 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90A222416D2F00068B124 /* FileReader.swift */; };
+		FAD90A252416E9460068B124 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90A242416E9460068B124 /* FileType.swift */; };
 		FAEFE2A724168D4A00753A6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE2A624168D4A00753A6C /* AppDelegate.swift */; };
 		FAEFE2A924168D4A00753A6C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFE2A824168D4A00753A6C /* MainViewController.swift */; };
 		FAEFE2AB24168D4A00753A6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAEFE2AA24168D4A00753A6C /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FAD90A202416D02F0068B124 /* action.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = action.txt; sourceTree = "<group>"; };
+		FAD90A222416D2F00068B124 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
+		FAD90A242416E9460068B124 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		FAEFE2A324168D4A00753A6C /* Reduxgen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reduxgen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEFE2A624168D4A00753A6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEFE2A824168D4A00753A6C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FAD90A1F2416CED80068B124 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAD90A202416D02F0068B124 /* action.txt */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		FAEFE29A24168D4A00753A6C = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +92,9 @@
 			children = (
 				FAEFE2A624168D4A00753A6C /* AppDelegate.swift */,
 				FAEFE2A824168D4A00753A6C /* MainViewController.swift */,
+				FAD90A222416D2F00068B124 /* FileReader.swift */,
+				FAD90A242416E9460068B124 /* FileType.swift */,
+				FAD90A1F2416CED80068B124 /* resources */,
 				FAEFE2AA24168D4A00753A6C /* Assets.xcassets */,
 				FAEFE2AC24168D4A00753A6C /* Main.storyboard */,
 				FAEFE2AF24168D4A00753A6C /* Info.plist */,
@@ -176,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD90A212416D02F0068B124 /* action.txt in Resources */,
 				FAEFE2AB24168D4A00753A6C /* Assets.xcassets in Resources */,
 				FAEFE2AE24168D4A00753A6C /* Main.storyboard in Resources */,
 			);
@@ -195,8 +213,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD90A232416D2F00068B124 /* FileReader.swift in Sources */,
 				FAEFE2A924168D4A00753A6C /* MainViewController.swift in Sources */,
 				FAEFE2A724168D4A00753A6C /* AppDelegate.swift in Sources */,
+				FAD90A252416E9460068B124 /* FileType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

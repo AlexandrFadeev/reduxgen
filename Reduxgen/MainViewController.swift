@@ -10,31 +10,49 @@ import Cocoa
 
 class MainViewController: NSViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var moduleNameTextField: NSTextField!
     @IBOutlet weak var pathLabel: NSTextField!
     @IBOutlet weak var browseButton: NSButton!
     @IBOutlet weak var generateButton: NSButton!
     
+    private var defaultUrl: URL {
+        let urlString = String(format: "/Users/%@/Documents", NSUserName())
+        return URL(string: urlString)!
+    }
+    
+    private let fileReader = FileReader()
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupTextFields()
         setupButtons()
     }
-
+    
     override var representedObject: Any? {
         didSet {
-        
+            
         }
     }
     
+    // MARK: - Private methods
     private func setupTextFields() {
-        let homeDirectory = FileManager.default.homeDirectoryForCurrentUser
-        pathLabel.stringValue = homeDirectory.absoluteString
+        pathLabel.stringValue = defaultUrl.absoluteString
     }
     
     private func setupButtons() {
-        generateButton.isEnabled = false
+        //generateButton.isEnabled = false
+    }
+    
+    private func readFromFile() {
+        guard let text = fileReader.stringFromFile(withName: "action") else { return }
+        
+        let className = String(format: "%@Action", moduleNameTextField.stringValue)
+        let updatedText = text.replacingOccurrences(of: "$", with: className)
+        
+        print(updatedText)
     }
 }
 
@@ -42,11 +60,10 @@ class MainViewController: NSViewController {
 extension MainViewController {
     
     @IBAction private func generateAction(_ sender: NSButton) {
-        
+        readFromFile()
     }
     
     @IBAction private func browseAction(_ sender: NSButton) {
         print("Browse action")
     }
-    
 }
