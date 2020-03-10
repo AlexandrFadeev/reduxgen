@@ -65,7 +65,10 @@ class MainViewController: NSViewController {
     private func createDomainSwiftFiles() {
         for domainFile in DomainFileType.allCases {
             guard let updateText = updatedStringReadFromFile(withName: domainFile.rawValue) else { continue }
-            let fileNameWithExtension = String(format: "%@.swift", domainFile.rawValue)
+            
+            let fileNameWithExtension = String(format: "%@%@.swift",
+                                               moduleNameTextField.stringValue.capitalized,
+                                               domainFile.rawValue.capitalized)
             let file = File(name: fileNameWithExtension, contents: updateText)
             
             fileWriter.write(toFile: file, withPath: defaultUrl.absoluteString)
