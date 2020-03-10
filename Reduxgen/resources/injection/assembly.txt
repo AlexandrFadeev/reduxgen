@@ -6,7 +6,7 @@ class @^Assembly: Assembly {
     func assemble(container: Container) {
         
         container.register(@^Repository.self) { resolver in
-            @^Repository(networkApi: resolver.resolve(MoyaProvider<NetworkApi>.self)!)
+            @^Repository(@*&: resolver.resolve(MoyaProvider<@*^>.self)!)
         }
         
         container.register(@^Processor.self) { resolver in

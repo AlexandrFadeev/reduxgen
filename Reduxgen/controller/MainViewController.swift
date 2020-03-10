@@ -12,6 +12,7 @@ class MainViewController: NSViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak var moduleNameTextField: NSTextField!
+    @IBOutlet weak var networkApiTextField: NSTextField!
     @IBOutlet weak var pathLabel: NSTextField!
     @IBOutlet weak var browseButton: NSButton!
     @IBOutlet weak var generateButton: NSButton!
@@ -22,6 +23,11 @@ class MainViewController: NSViewController {
     }
     
     private let fileReader = FileReader()
+    
+    private let capitalizedModulePlaceholder    = "@^"
+    private let lowercasedModulePlaceholder     = "@&"
+    private let capitalizaedApiPlaceholder      = "@*^"
+    private let lowercasedApiPlaceholder        = "@*&"
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -47,10 +53,12 @@ class MainViewController: NSViewController {
     }
     
     private func readFromFile() {
-        guard let text = fileReader.stringFromFile(withName: "processor") else { return }
+        guard let text = fileReader.stringFromFile(withName: "assembly") else { return }
         
-        let updatedText = text.replacingOccurrences(of: "@^", with: moduleNameTextField.stringValue)
-            .replacingOccurrences(of: "@&", with: moduleNameTextField.stringValue.lowercased())
+        let updatedText = text.replacingOccurrences(of: capitalizedModulePlaceholder, with: moduleNameTextField.stringValue)
+            .replacingOccurrences(of: lowercasedModulePlaceholder, with: moduleNameTextField.stringValue.lowercaseFirstLetter)
+            .replacingOccurrences(of: capitalizaedApiPlaceholder, with: networkApiTextField.stringValue)
+            .replacingOccurrences(of: lowercasedApiPlaceholder, with: networkApiTextField.stringValue.lowercaseFirstLetter)
         
         print(updatedText)
     }

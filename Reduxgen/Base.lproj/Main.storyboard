@@ -684,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -731,7 +731,7 @@
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="pca-nD-G2E">
                                         <rect key="frame" x="-2" y="33" width="76" height="14"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Location path" id="mTG-Eo-sLq">
-                                            <font key="font" metaFont="message" size="11"/>
+                                            <font key="font" metaFont="controlContent" size="11"/>
                                             <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -794,6 +794,7 @@
                         <outlet property="browseButton" destination="M5P-MF-MZX" id="hcv-yY-RDA"/>
                         <outlet property="generateButton" destination="DfT-my-VbD" id="cyx-5G-jlr"/>
                         <outlet property="moduleNameTextField" destination="NOJ-fj-yvQ" id="JJF-K4-FS4"/>
+                        <outlet property="networkApiTextField" destination="Vd2-cf-Ekf" id="ITD-b2-aji"/>
                         <outlet property="pathLabel" destination="pca-nD-G2E" id="Tw4-at-TTk"/>
                     </connections>
                 </viewController>

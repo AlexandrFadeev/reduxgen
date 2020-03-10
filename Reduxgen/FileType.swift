@@ -8,14 +8,18 @@
 
 import Foundation
 
-protocol FileTypeСopyable {
-}
-
-enum DomainFileType: String, CaseIterable, FileTypeСopyable {
-    case action
+enum DomainFileType: String, CaseIterable {
+    case state
+    case processor
     case result
+    case action
+    case reducer
 }
 
-enum PresentationFileType: String, CaseIterable, FileTypeСopyable {
+enum PresentationFileType: String, CaseIterable {
     case viewController
+}
+
+enum DataFileType: String, CaseIterable {
+    case model
 }
