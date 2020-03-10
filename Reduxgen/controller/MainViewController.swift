@@ -18,11 +18,12 @@ class MainViewController: NSViewController {
     @IBOutlet weak var generateButton: NSButton!
     
     private var defaultUrl: URL {
-        let urlString = String(format: "/Users/%@/Documents", NSUserName())
+        let urlString = String(format: "/Users/%@/Downloads/domain", NSUserName())
         return URL(string: urlString)!
     }
     
     private let fileReader = FileReader()
+    private let fileWriter = FileWriter()
     
     private let capitalizedModulePlaceholder    = "@^"
     private let lowercasedModulePlaceholder     = "@&"
@@ -52,15 +53,23 @@ class MainViewController: NSViewController {
         //generateButton.isEnabled = false
     }
     
-    private func readFromFile() {
-        guard let text = fileReader.stringFromFile(withName: "assembly") else { return }
+    private func updatedStringReadFromFile(withName name: String) -> String? {
+        guard let text = fileReader.stringFromFile(withName: name) else { return nil }
         
-        let updatedText = text.replacingOccurrences(of: capitalizedModulePlaceholder, with: moduleNameTextField.stringValue)
+        return text.replacingOccurrences(of: capitalizedModulePlaceholder, with: moduleNameTextField.stringValue)
             .replacingOccurrences(of: lowercasedModulePlaceholder, with: moduleNameTextField.stringValue.lowercaseFirstLetter)
             .replacingOccurrences(of: capitalizaedApiPlaceholder, with: networkApiTextField.stringValue)
             .replacingOccurrences(of: lowercasedApiPlaceholder, with: networkApiTextField.stringValue.lowercaseFirstLetter)
-        
-        print(updatedText)
+    }
+    
+    private func createDomainSwiftFiles() {
+        for domainFile in DomainFileType.allCases {
+            guard let updateText = updatedStringReadFromFile(withName: domainFile.rawValue) else { continue }
+            let fileNameWithExtension = String(format: "%@.swift", domainFile.rawValue)
+            let file = File(name: fileNameWithExtension, contents: updateText)
+            
+            fileWriter.write(toFile: file, withPath: defaultUrl.absoluteString)
+        }
     }
 }
 
@@ -68,7 +77,7 @@ class MainViewController: NSViewController {
 extension MainViewController {
     
     @IBAction private func generateAction(_ sender: NSButton) {
-        readFromFile()
+        createDomainSwiftFiles()
     }
     
     @IBAction private func browseAction(_ sender: NSButton) {
