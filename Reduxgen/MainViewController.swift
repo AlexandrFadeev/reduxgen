@@ -47,10 +47,10 @@ class MainViewController: NSViewController {
     }
     
     private func readFromFile() {
-        guard let text = fileReader.stringFromFile(withName: "action") else { return }
+        guard let text = fileReader.stringFromFile(withName: "processor") else { return }
         
-        let className = String(format: "%@Action", moduleNameTextField.stringValue)
-        let updatedText = text.replacingOccurrences(of: "$", with: className)
+        let updatedText = text.replacingOccurrences(of: "@^", with: moduleNameTextField.stringValue)
+            .replacingOccurrences(of: "@&", with: moduleNameTextField.stringValue.lowercased())
         
         print(updatedText)
     }

@@ -1,0 +1,20 @@
+import Foundation
+
+struct @^Processor: ProcessorType {
+    
+    typealias Completion = (ResultType) -> Void
+    
+    let @&Repo: @^Repository
+    
+    func process(action: ActionType, next: @escaping Completion) {
+        guard let @&Action = action as? @^Action else { return }
+        
+        /*
+            Switch case on 'action'
+
+            switch action {
+                case .update: next(@^Result.loading)
+            }
+        */
+    }
+}

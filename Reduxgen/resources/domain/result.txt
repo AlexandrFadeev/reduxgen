@@ -1,0 +1,10 @@
+import Foundation
+
+enum @^Result: ResultType {
+    /*
+    	Example:
+
+    	case loading
+    	case fetched(result: Result<Model, Error>)
+    */
+}

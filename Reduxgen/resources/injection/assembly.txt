@@ -1,0 +1,20 @@
+import Foundation
+import Swinject
+
+class @^Assembly: Assembly {
+    
+    func assemble(container: Container) {
+        
+        container.register(@^Repository.self) { resolver in
+            @^Repository(networkApi: resolver.resolve(MoyaProvider<NetworkApi>.self)!)
+        }
+        
+        container.register(@^Processor.self) { resolver in
+            @^Processor(@&Repo: resolver.resolve(@^Repository.self)!)
+        }
+        
+        container.register(@^Reducer.self) { _ in
+            @^Reducer()
+        }
+    }
+}

@@ -13,4 +13,9 @@ protocol FileTypeСopyable {
 
 enum DomainFileType: String, CaseIterable, FileTypeСopyable {
     case action
+    case result
+}
+
+enum PresentationFileType: String, CaseIterable, FileTypeСopyable {
+    case viewController
 }

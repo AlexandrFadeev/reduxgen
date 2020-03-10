@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA5902032417A73D001C0D6F /* viewController.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA5902022417A73D001C0D6F /* viewController.txt */; };
+		FA5902052417A9EA001C0D6F /* result.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA5902042417A9EA001C0D6F /* result.txt */; };
+		FA5902072417ACC4001C0D6F /* processor.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA5902062417ACC4001C0D6F /* processor.txt */; };
+		FA5902092417AFAF001C0D6F /* reducer.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA5902082417AFAF001C0D6F /* reducer.txt */; };
+		FA59020B2417B2CC001C0D6F /* state.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA59020A2417B2CC001C0D6F /* state.txt */; };
+		FA59020E2417B39F001C0D6F /* model.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA59020D2417B39F001C0D6F /* model.txt */; };
+		FA5902112417B4D6001C0D6F /* assembly.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA5902102417B4D6001C0D6F /* assembly.txt */; };
 		FAD90A212416D02F0068B124 /* action.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAD90A202416D02F0068B124 /* action.txt */; };
 		FAD90A232416D2F00068B124 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90A222416D2F00068B124 /* FileReader.swift */; };
 		FAD90A252416E9460068B124 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90A242416E9460068B124 /* FileType.swift */; };
@@ -28,6 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA5902022417A73D001C0D6F /* viewController.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = viewController.txt; sourceTree = "<group>"; };
+		FA5902042417A9EA001C0D6F /* result.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = result.txt; sourceTree = "<group>"; };
+		FA5902062417ACC4001C0D6F /* processor.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = processor.txt; sourceTree = "<group>"; };
+		FA5902082417AFAF001C0D6F /* reducer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = reducer.txt; sourceTree = "<group>"; };
+		FA59020A2417B2CC001C0D6F /* state.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = state.txt; sourceTree = "<group>"; };
+		FA59020D2417B39F001C0D6F /* model.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = model.txt; sourceTree = "<group>"; };
+		FA5902102417B4D6001C0D6F /* assembly.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assembly.txt; sourceTree = "<group>"; };
 		FAD90A202416D02F0068B124 /* action.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = action.txt; sourceTree = "<group>"; };
 		FAD90A222416D2F00068B124 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
 		FAD90A242416E9460068B124 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
@@ -61,10 +75,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA5902002417A708001C0D6F /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				FA59020A2417B2CC001C0D6F /* state.txt */,
+				FA5902062417ACC4001C0D6F /* processor.txt */,
+				FA5902042417A9EA001C0D6F /* result.txt */,
+				FAD90A202416D02F0068B124 /* action.txt */,
+				FA5902082417AFAF001C0D6F /* reducer.txt */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		FA5902012417A715001C0D6F /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				FA5902022417A73D001C0D6F /* viewController.txt */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		FA59020C2417B392001C0D6F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				FA59020D2417B39F001C0D6F /* model.txt */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		FA59020F2417B4BD001C0D6F /* injection */ = {
+			isa = PBXGroup;
+			children = (
+				FA5902102417B4D6001C0D6F /* assembly.txt */,
+			);
+			path = injection;
+			sourceTree = "<group>";
+		};
 		FAD90A1F2416CED80068B124 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				FAD90A202416D02F0068B124 /* action.txt */,
+				FA59020F2417B4BD001C0D6F /* injection */,
+				FA59020C2417B392001C0D6F /* data */,
+				FA5902012417A715001C0D6F /* presentation */,
+				FA5902002417A708001C0D6F /* domain */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -193,9 +246,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA59020B2417B2CC001C0D6F /* state.txt in Resources */,
 				FAD90A212416D02F0068B124 /* action.txt in Resources */,
+				FA5902112417B4D6001C0D6F /* assembly.txt in Resources */,
+				FA59020E2417B39F001C0D6F /* model.txt in Resources */,
+				FA5902072417ACC4001C0D6F /* processor.txt in Resources */,
+				FA5902092417AFAF001C0D6F /* reducer.txt in Resources */,
 				FAEFE2AB24168D4A00753A6C /* Assets.xcassets in Resources */,
 				FAEFE2AE24168D4A00753A6C /* Main.storyboard in Resources */,
+				FA5902032417A73D001C0D6F /* viewController.txt in Resources */,
+				FA5902052417A9EA001C0D6F /* result.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

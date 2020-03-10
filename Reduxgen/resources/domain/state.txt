@@ -1,0 +1,8 @@
+import UIKit
+
+struct @^State: StateType, MemberwiseCopyable {
+    /*
+    	Example:
+    	var loading: OneTimeEvent<Bool>?
+    */
+}

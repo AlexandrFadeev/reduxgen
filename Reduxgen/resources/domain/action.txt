@@ -1,0 +1,10 @@
+import Foundation
+
+enum @^Action: ActionType {
+    /*
+        Examples:
+    
+        case fetch(id: String)
+        case update
+    */
+}

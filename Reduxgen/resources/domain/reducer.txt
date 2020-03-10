@@ -1,0 +1,19 @@
+import Foundation
+
+struct @^Reducer: ReducerType {
+    
+    typealias State = @^State
+    
+    func reduce(result: ResultType, state: @^State) -> @^State {
+        
+        guard let @&Result = result as? @^Result else { return state }
+        
+        /*
+            Switch case on @&Result
+
+            switch @&Result {
+                case .loading: return @^State(OneTimeEvent(true))
+            }
+        */
+    }
+}
