@@ -22,4 +22,9 @@ enum PresentationFileType: String, CaseIterable {
 
 enum DataFileType: String, CaseIterable {
     case model
+    case repository
+}
+
+enum InjectionFileType: String, CaseIterable {
+    case assembly
 }

@@ -1,0 +1,20 @@
+import Foundation
+
+class @^Repository {
+    
+    private let @*&: MoyaProvider<@*^>
+    
+    init(@*&: MoyaProvider<@*^>) {
+        self.@*& = @*&
+    }
+    
+    /*
+        Example:
+
+        func signIn(with phoneNumner: PhoneNumber, password: String,
+                completion: @escaping SignInCompletion) {
+            let body = SignInBody(phoneNumber: phoneNumner, password: password)
+            goseapApi.request(.signIn(body: body), callback: completion)
+        }
+    */
+}

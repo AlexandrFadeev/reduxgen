@@ -16,6 +16,8 @@
 		FA5902112417B4D6001C0D6F /* assembly.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA5902102417B4D6001C0D6F /* assembly.txt */; };
 		FA5902142417C316001C0D6F /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5902132417C316001C0D6F /* StringExtension.swift */; };
 		FA5902162417D564001C0D6F /* FileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5902152417D564001C0D6F /* FileWriter.swift */; };
+		FAAAAA9624193C0C008BA617 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAAAA9524193C0C008BA617 /* FileManagerExtension.swift */; };
+		FAAF172F241910730056501D /* repository.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAAF172E241910730056501D /* repository.txt */; };
 		FACEA9862417E68000E5F309 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEA9852417E68000E5F309 /* File.swift */; };
 		FAD90A212416D02F0068B124 /* action.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAD90A202416D02F0068B124 /* action.txt */; };
 		FAD90A232416D2F00068B124 /* FileReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD90A222416D2F00068B124 /* FileReader.swift */; };
@@ -47,6 +49,8 @@
 		FA5902102417B4D6001C0D6F /* assembly.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = assembly.txt; sourceTree = "<group>"; };
 		FA5902132417C316001C0D6F /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		FA5902152417D564001C0D6F /* FileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWriter.swift; sourceTree = "<group>"; };
+		FAAAAA9524193C0C008BA617 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
+		FAAF172E241910730056501D /* repository.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = repository.txt; sourceTree = "<group>"; };
 		FACEA9852417E68000E5F309 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FAD90A202416D02F0068B124 /* action.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = action.txt; sourceTree = "<group>"; };
 		FAD90A222416D2F00068B124 /* FileReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReader.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 		FA59020C2417B392001C0D6F /* data */ = {
 			isa = PBXGroup;
 			children = (
+				FAAF172E241910730056501D /* repository.txt */,
 				FA59020D2417B39F001C0D6F /* model.txt */,
 			);
 			path = data;
@@ -121,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				FA5902132417C316001C0D6F /* StringExtension.swift */,
+				FAAAAA9524193C0C008BA617 /* FileManagerExtension.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				FAEFE2AB24168D4A00753A6C /* Assets.xcassets in Resources */,
 				FAEFE2AE24168D4A00753A6C /* Main.storyboard in Resources */,
 				FA5902032417A73D001C0D6F /* viewController.txt in Resources */,
+				FAAF172F241910730056501D /* repository.txt in Resources */,
 				FA5902052417A9EA001C0D6F /* result.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +326,7 @@
 				FACEA9862417E68000E5F309 /* File.swift in Sources */,
 				FAEFE2A924168D4A00753A6C /* MainViewController.swift in Sources */,
 				FA5902142417C316001C0D6F /* StringExtension.swift in Sources */,
+				FAAAAA9624193C0C008BA617 /* FileManagerExtension.swift in Sources */,
 				FAEFE2A724168D4A00753A6C /* AppDelegate.swift in Sources */,
 				FAD90A252416E9460068B124 /* FileType.swift in Sources */,
 			);
