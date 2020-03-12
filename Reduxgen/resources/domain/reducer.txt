@@ -8,12 +8,10 @@ struct @^Reducer: ReducerType {
         
         guard let @&Result = result as? @^Result else { return state }
         
-        /*
-            Switch case on @&Result
-
-            switch @&Result {
-                case .loading: return @^State(OneTimeEvent(true))
-            }
-        */
+//        switch accountResult {
+//        case .loading: return AccountState(OneTimeEvent(true))
+//        }
+        #warning("Remove this line after implement 'switch-case'")
+        return state
     }
 }

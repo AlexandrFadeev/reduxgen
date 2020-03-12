@@ -92,33 +92,81 @@ class MainViewController: NSViewController {
         FileManager.default.createDirectory(atURL: url) { isSuccess in
             guard isSuccess else { return }
             
+            // Generating files and directories for Redux flow such as 'data', 'domain', 'injection', 'presentation'...
             createDomainFiles(withURL: url)
+            createInjectionFiles(withURL: url)
+            createDataFiles(withURL: url)
+            createPresentationFiles(withURL: url)
         }
     }
     
     private func createInjectionFiles(withURL url: URL) {
-        
+        let injectionUrl = url.appendingPathComponent("injection")
+        FileManager.default.createDirectory(atURL: injectionUrl) { isSuccess in
+            guard isSuccess else { return }
+            
+            for injectionFile in InjectionFileType.allCases {
+                guard let updatedText = updatedStringReadFromFile(withName: injectionFile.rawValue) else {
+                    continue
+                }
+                
+                let fileNameWithExtension = String(format: "%@%@.swift", moduleName, injectionFile.rawValue.capitalized)
+                let file = File(name: fileNameWithExtension, contents: updatedText)
+                fileWriter.write(toFile: file, withPath: injectionUrl.absoluteString)
+            }
+        }
     }
     
     private func createDataFiles(withURL url: URL) {
-        
+        let dataUrl = url.appendingPathComponent("data")
+        FileManager.default.createDirectory(atURL: dataUrl) { isSuccess in
+            guard isSuccess else { return }
+            
+            for dataFile in DataFileType.allCases {
+                guard let updatedText = updatedStringReadFromFile(withName: dataFile.rawValue) else { continue }
+                var fileNameWithExtension = ""
+                if dataFile == .model {
+                    fileNameWithExtension = String(format: "%@.swift", moduleName)
+                } else {
+                    fileNameWithExtension = String(format: "%@%@.swift", moduleName, dataFile.rawValue.capitalized)
+                }
+                
+                let file = File(name: fileNameWithExtension, contents: updatedText)
+                fileWriter.write(toFile: file, withPath: dataUrl.absoluteString)
+            }
+        }
     }
     
-    private func presentationFiles(withURL url: URL) {
-        
+    private func createPresentationFiles(withURL url: URL) {
+        let presentationUrl = url.appendingPathComponent("presentation")
+        FileManager.default.createDirectory(atURL: presentationUrl) { isSuccess in
+            guard isSuccess else { return }
+            
+            for presentationFile in PresentationFileType.allCases {
+                guard let updatedText = updatedStringReadFromFile(withName: presentationFile.rawValue) else { continue }
+                
+                let fileNameWithExtension = String(format: "%@%@.swift", moduleName, presentationFile.rawValue.capitalized)
+                let file = File(name: fileNameWithExtension, contents: updatedText)
+                fileWriter.write(toFile: file, withPath: presentationUrl.absoluteString)
+            }
+        }
     }
     
     private func createDomainFiles(withURL url: URL) {
-        //        for domainFile in DomainFileType.allCases {
-        //            guard let updateText = updatedStringReadFromFile(withName: domainFile.rawValue) else { continue }
-        //
-        //            let fileNameWithExtension = String(format: "%@%@.swift",
-        //                                               moduleNameTextField.stringValue.capitalized,
-        //                                               domainFile.rawValue.capitalized)
-        //            let file = File(name: fileNameWithExtension, contents: updateText)
-        //
-        //            fileWriter.write(toFile: file, withPath: defaultUrl.absoluteString)
-        //        }
+        let domainUrl = url.appendingPathComponent("domain")
+        FileManager.default.createDirectory(atURL: domainUrl) { isSuccess in
+            guard isSuccess else { return }
+            
+            for domainFile in DomainFileType.allCases {
+                guard let updatexText = updatedStringReadFromFile(withName: domainFile.rawValue) else {
+                    continue
+                }
+                
+                let fileNameWithExtension = String(format: "%@%@.swift", moduleName, domainFile.rawValue.capitalized)
+                let file = File(name: fileNameWithExtension, contents: updatexText)
+                fileWriter.write(toFile: file, withPath: domainUrl.absoluteString)
+            }
+        }
     }
 }
 
